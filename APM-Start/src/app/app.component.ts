@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'pm-root',
-  template: `<div>
-    <h1>{{ pageTitle +" "+ getTodayDate()}}</h1>
-    <pm-products></pm-products>
-  </div>`,
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   pageTitle: string = 'Acme Product Management';
@@ -14,6 +11,12 @@ export class AppComponent {
   getTodayDate(): string {
     let currentDate = new Date();
 
-    return currentDate.getDate() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getFullYear();
+    return (
+      currentDate.getDate() +
+      '-' +
+      (currentDate.getMonth() + 1) +
+      '-' +
+      currentDate.getFullYear()
+    );
   }
 }
