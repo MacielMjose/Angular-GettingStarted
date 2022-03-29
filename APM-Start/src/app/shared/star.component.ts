@@ -3,6 +3,7 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
@@ -21,6 +22,7 @@ export class StarComponent implements OnChanges {
     this.cropWidth = this.rating * (75 / 5);
     console.log('change values detected');
   }
+
   onClick(): void {
     this.ratingClicked.emit(`The rating ${this.rating} was clicked!`);
   }
